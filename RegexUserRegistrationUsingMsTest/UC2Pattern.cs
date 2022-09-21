@@ -7,21 +7,25 @@ using System.Threading.Tasks;
 
 namespace RegexUserRegistrationUsingMsTest
 {
-    public class UC2RegexLastName
+    public class UC2Pattern
     {
-        public static void ValidLastName()
+        public string lastName;
+        public UC2Pattern(string lastName)
         {
-            Console.WriteLine("Enter first name");
-            string firstname = Console.ReadLine();
+            this.lastName = lastName;
+        }
+        
+        public string  ValidLastName()
+        {
             string pattern = "^[A-Z],[a-z],{3}$";
-            if (Regex.IsMatch(firstname, pattern))
+            if (Regex.IsMatch(lastName, pattern))
             {
-                Console.WriteLine("valid first name");
+                return lastName;
 
             }
             else
             {
-                Console.WriteLine("In valid first name");
+                return lastName;
             }
         }
     }
