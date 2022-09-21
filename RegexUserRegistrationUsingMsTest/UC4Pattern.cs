@@ -7,21 +7,28 @@ using System.Threading.Tasks;
 
 namespace RegexUserRegistrationUsingMsTest
 {
-    public class UC4MobileNumber
+    public class UC4Pattern
     {
-        public static void ValidMobileNumber()
+        public string mobilenumber;
+
+        public UC4Pattern(string mobilenumber)
         {
-            Console.WriteLine("Enter Mobile num");
-            string mobilenumber = Console.ReadLine();
+            this.mobilenumber = mobilenumber;
+        }
+
+        public string ValidMobileNumber()
+        {
             string pattern = "^[+][91]{3}[..][6-9]{2}[0-9]{9}$";
             if (Regex.IsMatch(mobilenumber, pattern))
             {
-                Console.WriteLine("valid mobile number");
+                return mobilenumber;
             }
             else
             {
-                Console.WriteLine("invalid mobile number");
+                return mobilenumber;
             }
         }
+           
+        
     }
 }

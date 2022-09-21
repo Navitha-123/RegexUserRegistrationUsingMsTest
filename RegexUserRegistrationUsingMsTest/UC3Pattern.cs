@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RegexUserRegistrationUsingMsTest
 {
-    public class UC3Emails
+    public class UC3Pattern
     {
         public static void ValidEmailAddress()
         {
