@@ -7,9 +7,16 @@ using System.Threading.Tasks;
 
 namespace RegexUserRegistrationUsingMsTest
 {
-    public class UC6PasswordUpperCase
+    public class UC6Pattern
     {
-        public static void ValidPassWord(string password)
+        public string password;
+
+        public UC6Pattern(string password)
+        {
+            this.password = password;
+        }
+
+       public string ValidPasswordRule2()
         {
             var hasLowerChar = new Regex(@"[a-z]+");
             var hasUpperChar = new Regex(@"[A-Z]+");
@@ -18,23 +25,30 @@ namespace RegexUserRegistrationUsingMsTest
             if (!hasMiniChar.IsMatch(password))
             {
                 Console.WriteLine("Password should have mini 8 char");
-
+                return null;
             }
             else if (!hasLowerChar.IsMatch(password))
             {
                 Console.WriteLine("the password should have atleast one lower case letter");
+                return null;
             }
             else if (!hasUpperChar.IsMatch(password))
             {
                 Console.WriteLine("password should have atleast one upper case letter");
+                return null;
 
             }
             else
             {
                 if (pattern.IsMatch(password))
                 {
-                    Console.WriteLine("password is valid");
+                    return password;
                 }
+                else
+                {
+                    return null;
+                }
+               
 
             }
         }
